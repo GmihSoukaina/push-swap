@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/27 10:44:43 by sgmih             #+#    #+#             */
+/*   Updated: 2025/01/27 10:45:40 by sgmih            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static char	*ft_substr(char *s, unsigned int start, size_t len)
@@ -62,7 +74,7 @@ static	void	**ft_free(char **arr, size_t count)
 	return (NULL);
 }
 
-static char **ft_fill_arr(char **arr, char c, char	*str)
+static char	**ft_fill_arr(char **arr, char c, char	*str)
 {
 	size_t		i;
 	size_t		j;

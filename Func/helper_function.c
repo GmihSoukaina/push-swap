@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   helper_function.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/27 10:42:30 by sgmih             #+#    #+#             */
+/*   Updated: 2025/01/27 10:42:53 by sgmih            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_list	*ft_lstmax(t_list *lst)
@@ -51,6 +63,7 @@ void	free_leaks(t_list **stack)
 size_t	ft_strlen(char *str)
 {
 	size_t	len;
+
 	len = 0;
 	while (*str)
 	{

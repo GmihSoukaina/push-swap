@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/27 10:34:58 by sgmih             #+#    #+#             */
+/*   Updated: 2025/01/27 10:36:01 by sgmih            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_error(t_list **stack)
 {
-	// remoooove void and used stack 
-	//(void)stack;
 	write(1, "Error\n", 6);
 	free_leaks(stack);
 	exit(1);
@@ -47,49 +57,24 @@ void	check_valid(char *av, t_list **stack)
 void	check_exist(t_list **stack, int res, char **str)
 {
 	t_list	*temp;
-	char	**temp_str = str; // Save original pointer
+	char	**temp_str;
 
-	if (!stack || !(*stack))  
+	if (!stack || !(*stack))
 		return ;
-
+	**temp_str = str;
 	temp = *stack;
 	while (temp != NULL)
 	{
-		if (temp->content == res) // If duplicate is found
+		if (temp->content == res)
 		{
-			while (*temp_str) // Free each part of the split array
+			while (*temp_str)
 			{
 				free(*temp_str);
 				temp_str++;
 			}
-			free(str); // Free the array itself
+			free(str);
 			ft_error(stack);
 		}
 		temp = temp->next;
 	}
 }
-
-// void	check_exist(t_list **stack, int res, char **str)
-// {
-// 	t_list	*temp;
-// 	char **temp_str;
-// 	if (!stack || !(*stack))  // Ensure the stack is not NULL and contains elements
-// 		return ;
-// 	temp = *stack;
-// 	while (temp != NULL)
-// 	{
-// 		//printf("Checking stack value: %d against input value: %d\n", temp->content, res); // Debug print
-// 		if (temp->content == res) // If a duplicate is found
-// 		{
-// 			temp_str = str;
-// 			while (*str) // Free each part of the split array
-// 			{
-// 				free(*str);
-// 				str++;
-// 			}
-// 			free(temp_str);
-// 			ft_error(stack);
-// 		}
-// 		temp = temp->next;
-// 	}
-// }

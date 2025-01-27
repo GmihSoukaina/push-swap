@@ -1,44 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   func_utils_linkd_list.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/27 10:43:03 by sgmih             #+#    #+#             */
+/*   Updated: 2025/01/27 10:44:35 by sgmih            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// t_list	*ft_lstnew(t_list **stack, int content)
-// {
-//     t_list *new_node;
-//     new_node = malloc(sizeof(t_list));
-//     if (!new_node)
-//         return NULL;
-//     new_node->content = content;
-//     new_node->index = 0;
-//     new_node->next = NULL;
-//     return new_node;
-// }
-
-// t_list *ft_lstnew(int content)
-// {
-//     t_list *new_node;
-//     new_node = malloc(sizeof(t_list));
-//     if (!new_node)
-//         return NULL;
-//     new_node->content = content;
-//     new_node->index = 0;  // Index will be assigned later
-//     new_node->position = 0;
-//     new_node->next = NULL;
-//     return (new_node);
-// }
-
-t_list *ft_lstnew(t_list **stack_a, int content)
+t_list	*ft_lstnew(t_list **stack_a, int content)
 {
-    t_list *new_node;
+	t_list	*new_node;
 
-    new_node = (t_list *)malloc(sizeof(t_list));
-    if (!new_node)
-        return NULL;
-
-    new_node->content = content;
-    new_node->position = 0;
-    new_node->next = NULL;
-    new_node->index = 0; 
-    fun_index(stack_a, new_node);
-    return (new_node);
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->position = 0;
+	new_node->next = NULL;
+	new_node->index = 0;
+	fun_index(stack_a, new_node);
+	return (new_node);
 }
 
 void	ft_lstadd_back(t_list **stack, t_list *new)

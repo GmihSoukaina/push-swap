@@ -1,42 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operation_push.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/27 10:40:40 by sgmih             #+#    #+#             */
+/*   Updated: 2025/01/27 10:41:23 by sgmih            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void push(t_list **src, t_list **dst, char *str)
+void	push(t_list **src, t_list **dst, char *str)
 {
-    t_list *top_src;
+	t_list	*top_src;
 
-    if (!*src) // If the source is empty, nothing to do
-        return;
-
-    top_src = *src;  // Get the top element of source list
-    *src = (*src)->next;  // Move the source pointer to the next element
-    top_src->next = NULL; // Set the next pointer of the element to NULL
-    ft_lstadd_front(dst, top_src);
-
-    if (str)
+	if (!*src)
+		return ;
+	top_src = *src;
+	*src = (*src)->next;
+	top_src->next = NULL;
+	ft_lstadd_front(dst, top_src);
+	if (str)
 		write(1, str, ft_strlen(str));
 }
 
-void push_a(t_list **stack_a, t_list **stack_b)
+void	push_a(t_list **stack_a, t_list **stack_b)
 {
-    // printf("Initial Stack A:\n");
-    // print_stack(*stack_a, "A");
-
-    // printf("Initial Stack B:\n");
-    // print_stack(*stack_b, "B");
-    while (*stack_b) // While stack_b is not empty
-    {
-        fun_position(stack_b); // Assuming this updates positions (you may need to implement this)
-
-        // printf("Initial Stack B:\n");
-        // print_stack(*stack_b, "B");
-        // If the top element of stack_b is the max, push it to stack_a
-        if (*stack_b == ft_lstmax(*stack_b))
-            push(stack_b, stack_a, "pa\n");
-
-        // Otherwise, rotate or reverse rotate to bring the max to the front
-        else if (ft_lstmax(*stack_b)->position <= ft_lstsize(*stack_b) / 2)
-            rotate(stack_b, "rb\n");
-        else
-            reverse_rotate(stack_b, "rrb\n");
-    }
+	while (*stack_b)
+	{
+		fun_position(stack_b);
+		if (*stack_b == ft_lstmax(*stack_b))
+			push(stack_b, stack_a, "pa\n");
+		else if (ft_lstmax(*stack_b)->position <= ft_lstsize(*stack_b) / 2)
+			rotate(stack_b, "rb\n");
+		else
+			reverse_rotate(stack_b, "rrb\n");
+	}
 }
