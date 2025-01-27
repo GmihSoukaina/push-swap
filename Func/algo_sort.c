@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:46:03 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 10:47:26 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/27 17:10:40 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,5 @@ int	ft_sort(t_list **stack_a, t_list **stack_b, int size)
 		else
 			rotate(stack_a, "ra\n");
 	}
-	return (push_a(stack_a, stack_b), 0);
+	return (ft_push_a(stack_a, stack_b), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:42:30 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 10:42:53 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/27 17:37:10 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	free_leaks(t_list **stack)
 	*stack = NULL;
 }
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	len;
 

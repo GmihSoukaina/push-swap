@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:34:58 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 10:36:01 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/27 11:58:17 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	check_exist(t_list **stack, int res, char **str)
 
 	if (!stack || !(*stack))
 		return ;
-	**temp_str = str;
+	temp_str = str;
 	temp = *stack;
 	while (temp != NULL)
 	{

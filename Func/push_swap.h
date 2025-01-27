@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:12:33 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 10:26:08 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/27 20:29:20 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ void	push(t_list **src, t_list **dst, char *str);
 void	reverse_rotate(t_list **stack, char *str);
 void	swap(t_list **stack, char *str);
 void	rotate(t_list **stack, char *str);
-void	push_a(t_list **stack_a, t_list **stack_b);
+void	ft_push_a(t_list **stack_a, t_list **stack_b);
 void	ft_lstclear(t_list **lst);
 void	free_leaks(t_list **stack);
 t_list	*ft_lstmin(t_list *lst);
 t_list	*ft_lstmax(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(t_list **stack_a, int content);
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(char *str, t_list **stack);
 int		ft_sort_3(t_list **lst);
@@ -55,4 +55,15 @@ int		ft_sort_4(t_list **stack_a, t_list **stack_b);
 int		ft_sort_5(t_list **stack_a, t_list **stack_b);
 int		ft_sort(t_list **a, t_list **b, int size);
 
+void swap_a(t_list **stack_a);
+void swap_b(t_list **stack_b);
+void swap_a_b(t_list **stack_a, t_list **stack_b);
+void rotate_a(t_list **stack_a);
+void rotate_b(t_list **stack_b);
+void rotate_a_b(t_list **stack_a, t_list **stack_b);
+void reverse_rotate_a(t_list **stack_a);
+void reverse_rotate_b(t_list **stack_b);
+void reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
+void push_a(t_list **stack_a, t_list **stack_b);
+void push_b(t_list **stack_a, t_list **stack_b);
 #endif
