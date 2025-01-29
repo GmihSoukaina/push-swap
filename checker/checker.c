@@ -6,11 +6,11 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:58:34 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 20:26:28 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/29 18:23:29 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Func/push_swap.h"
+#include "checker.h"
 
 int	is_sorted(t_list **stack)
 {

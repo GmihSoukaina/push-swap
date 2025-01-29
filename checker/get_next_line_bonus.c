@@ -6,11 +6,11 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:57:55 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 20:26:02 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/29 18:25:52 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Func/push_swap.h"
+#include "checker.h"
 
 static char	*find_newline(int fd, char *str)
 {

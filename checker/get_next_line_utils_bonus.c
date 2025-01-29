@@ -6,11 +6,11 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 11:01:02 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 20:26:22 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/29 18:26:01 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Func/push_swap.h"
+#include "checker.h"
 
 // size_t	ft_strlen(const char *s)
 // {
