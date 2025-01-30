@@ -34,7 +34,7 @@ clean:
 	@$(RM) $(OFuns) $(OFuns_bn)
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
