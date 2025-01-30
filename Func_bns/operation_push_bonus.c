@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:40:40 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/29 18:26:08 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/30 11:21:20 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void push_a(t_list **stack_a, t_list **stack_b)
     write(1, "pb\n", 3);
 }
 
-void push_b(t_list **stack_a, t_list **stack_b)
+void push_b(t_list **stack_b, t_list **stack_a)
 {
     push(stack_b, stack_a, NULL);
     write(1, "pa\n", 3);

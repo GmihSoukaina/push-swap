@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:58:34 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/29 18:23:29 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/30 11:11:23 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ static	void	error(t_list **a, t_list **b, char *line)
 
 static void	parse_command(t_list **a, t_list **b, char *command)
 {
-	if (!ft_strncmp(command, "pa\n", 3))
+	if (!ft_strncmp(command, "pb\n", 3))
 		push_a(a, b);
-	else if (!ft_strncmp(command, "pb\n", 3))
+	else if (!ft_strncmp(command, "pa\n", 3))
 		push_b(b, a);
 	else if (!ft_strncmp(command, "sa\n", 3))
 		swap_a(a);
@@ -102,6 +102,23 @@ static void	parse_command(t_list **a, t_list **b, char *command)
 		error(a, b, command);
 }
 
+#include <stdio.h>
+
+void print_stack(t_list *stack)
+{
+    // printf("Stack A:\n");
+    printf("-----------------------\n");
+    printf("| Value | Index | Pos |\n");
+    printf("-----------------------\n");
+    while (stack)
+    {
+        printf("|  %4d  |  %4d  | %3d |\n", stack->content, stack->index, stack->position);
+        stack = stack->next;
+    }
+    printf("----------------------\n\n");
+}
+
+
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
@@ -114,14 +131,36 @@ int	main(int ac, char **av)
 	if (ac >= 2)
 	{
 		parse(av, &stack_a);
+
+		printf("Before command execution:\n");
+		printf("Stack A:\n");
+		print_stack(stack_a);
+		printf("Stack B:\n");
+		print_stack(stack_b);
+		
 		size = ft_lstsize(stack_a);
         next_line = get_next_line(0);
+		
+		//parse_command(&stack_a, &stack_b, next_line);
+		
+		
 		while (next_line)
 		{
+			printf("Received command: %s\n", next_line);
 			parse_command(&stack_a, &stack_b, next_line);
+
+			printf("After command execution:\n");
+			printf("Stack A:\n");
+			print_stack(stack_a);
+			printf("Stack B:\n");
+			print_stack(stack_b);
+		
 			free(next_line);
 			next_line = get_next_line(0);
 		}
+
+
+		
         if (is_sorted(&stack_a) && ft_lstsize(stack_a) == size)
 			write(1, "OK\n", 3);
 		else
