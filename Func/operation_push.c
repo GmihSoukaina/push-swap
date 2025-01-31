@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:40:40 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 17:15:52 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 14:42:27 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,4 @@ void	ft_push_a(t_list **stack_a, t_list **stack_b)
 		else
 			reverse_rotate(stack_b, "rrb\n");
 	}
-}
-void push_a(t_list **stack_a, t_list **stack_b)
-{
-	push(stack_a, stack_b, NULL);
-    write(1, "pb\n", 3);
-}
-
-void push_b(t_list **stack_a, t_list **stack_b)
-{
-    push(stack_b, stack_a, NULL);
-    write(1, "pa\n", 3);
 }

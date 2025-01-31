@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:43:03 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 10:44:35 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 14:43:15 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,19 +78,4 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		return ;
 	new->next = *lst;
 	*lst = new;
-}
-
-int	ft_lstsize(t_list *lst)
-{
-	int	count;
-
-	if (!lst)
-		return (0);
-	count = 0;
-	while (lst)
-	{
-		count++;
-		lst = lst->next;
-	}
-	return (count);
 }

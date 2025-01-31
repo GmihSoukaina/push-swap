@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:39:07 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 16:58:20 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 14:40:03 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,4 @@ void	rotate(t_list **stack, char *str)
 	first->next = NULL;
 	if (str)
 		write(1, str, ft_strlen(str));
-}
-
-void rotate_a(t_list **stack_a)
-{
-    rotate(stack_a, NULL);
-    write(1, "ra\n", 3);
-}
-
-void rotate_b(t_list **stack_b)
-{
-    rotate(stack_b, NULL);
-    write(1, "rb\n", 3);
-}
-
-void rotate_a_b(t_list **stack_a, t_list **stack_b)
-{
-    rotate(stack_a, NULL);
-    rotate(stack_b, NULL);
-    write(1, "rr\n", 3);
 }

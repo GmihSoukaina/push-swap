@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:12:33 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 20:29:20 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 14:39:48 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,4 @@ int		ft_sort_4(t_list **stack_a, t_list **stack_b);
 int		ft_sort_5(t_list **stack_a, t_list **stack_b);
 int		ft_sort(t_list **a, t_list **b, int size);
 
-void swap_a(t_list **stack_a);
-void swap_b(t_list **stack_b);
-void swap_a_b(t_list **stack_a, t_list **stack_b);
-void rotate_a(t_list **stack_a);
-void rotate_b(t_list **stack_b);
-void rotate_a_b(t_list **stack_a, t_list **stack_b);
-void reverse_rotate_a(t_list **stack_a);
-void reverse_rotate_b(t_list **stack_b);
-void reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
-void push_a(t_list **stack_a, t_list **stack_b);
-void push_b(t_list **stack_a, t_list **stack_b);
 #endif

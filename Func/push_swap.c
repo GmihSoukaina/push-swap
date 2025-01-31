@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:26:30 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/30 10:11:03 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 14:38:42 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,8 @@ void	ft_stack(t_list **stack_a, t_list **stack_b, int size)
 	ft_lstclear(stack_a);
 }
 
-// void ff(){
-// 	system("leaks push_swap");
-// }
-
 int	main(int ac, char **av)
 {
-	//atexit(ff);
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		size;

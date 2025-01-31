@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:42:30 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/27 17:37:10 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 14:43:29 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,19 @@ size_t	ft_strlen(const char *str)
 		len++;
 	}
 	return (len);
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	int	count;
+
+	if (!lst)
+		return (0);
+	count = 0;
+	while (lst)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }
