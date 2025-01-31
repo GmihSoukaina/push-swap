@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:41:41 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/29 18:26:05 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 15:11:05 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,6 @@ void	fun_index(t_list **str, t_list *node)
 		else
 			node->index++;
 		tmp = tmp->next;
-	}
-}
-
-void	fun_position(t_list **s1)
-{
-	t_list	*tmp;
-	int		i;
-
-	i = 0;
-	tmp = *s1;
-	while (tmp)
-	{
-		tmp->position = i;
-		tmp = tmp->next;
-		i++;
 	}
 }
 
@@ -86,4 +71,31 @@ int	ft_atoi(char *str, t_list **stack)
 		|| (ft_intlen(res) > 10 && res > 0) || (ft_intlen(res) > 11 && res < 0))
 		ft_error(stack);
 	return (res);
+}
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && s1[i] && s1[i] == s2[i])
+		i++;
+	if (i == n)
+		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	int	count;
+
+	if (!lst)
+		return (0);
+	count = 0;
+	while (lst)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }

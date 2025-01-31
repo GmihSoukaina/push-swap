@@ -6,13 +6,13 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:36:46 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/29 18:26:21 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 14:52:47 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	swap(t_list **stack, char *str)
+void	swap(t_list **stack)
 {
 	t_list	*first;
 	t_list	*second;
@@ -24,25 +24,20 @@ void	swap(t_list **stack, char *str)
 	first->next = second->next;
 	second->next = first;
 	*stack = second;
-	if (str)
-		write(1, str, ft_strlen(str));
 }
 
-void swap_a(t_list **stack_a)
+void	swap_a(t_list **stack_a)
 {
-    swap(stack_a, NULL);
-    write(1, "sa\n", 3);
+	swap(stack_a);
 }
 
-void swap_b(t_list **stack_b)
+void	swap_b(t_list **stack_b)
 {
-    swap(stack_b, NULL);
-    write(1, "sb\n", 3);
+	swap(stack_b);
 }
 
-void swap_a_b(t_list **stack_a, t_list **stack_b)
+void	swap_a_b(t_list **stack_a, t_list **stack_b)
 {
-    swap(stack_a, NULL);
-    swap(stack_b, NULL);
-    write(1, "ss\n", 3);
+	swap(stack_a);
+	swap(stack_b);
 }

@@ -6,25 +6,11 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:58:34 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/30 11:11:23 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 15:05:06 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-int	is_sorted(t_list **stack)
-{
-	t_list	*head;
-
-	head = *stack;
-	while (head && head->next)
-	{
-		if (head->content > head->next->content)
-			return (0);
-		head = head->next;
-	}
-	return (1);
-}
 
 void	parse(char **av, t_list **stack_a)
 {
@@ -53,18 +39,6 @@ void	parse(char **av, t_list **stack_a)
 		free(str);
 		i++;
 	}
-}
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n && s1[i] && s1[i] == s2[i])
-		i++;
-	if (i == n)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
 static	void	error(t_list **a, t_list **b, char *line)
@@ -102,66 +76,27 @@ static void	parse_command(t_list **a, t_list **b, char *command)
 		error(a, b, command);
 }
 
-#include <stdio.h>
-
-void print_stack(t_list *stack)
-{
-    // printf("Stack A:\n");
-    printf("-----------------------\n");
-    printf("| Value | Index | Pos |\n");
-    printf("-----------------------\n");
-    while (stack)
-    {
-        printf("|  %4d  |  %4d  | %3d |\n", stack->content, stack->index, stack->position);
-        stack = stack->next;
-    }
-    printf("----------------------\n\n");
-}
-
-
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		size;
-    char	*next_line;
+	char	*next_line;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac >= 2)
 	{
 		parse(av, &stack_a);
-
-		printf("Before command execution:\n");
-		printf("Stack A:\n");
-		print_stack(stack_a);
-		printf("Stack B:\n");
-		print_stack(stack_b);
-		
 		size = ft_lstsize(stack_a);
-        next_line = get_next_line(0);
-		
-		//parse_command(&stack_a, &stack_b, next_line);
-		
-		
+		next_line = get_next_line(0);
 		while (next_line)
 		{
-			printf("Received command: %s\n", next_line);
 			parse_command(&stack_a, &stack_b, next_line);
-
-			printf("After command execution:\n");
-			printf("Stack A:\n");
-			print_stack(stack_a);
-			printf("Stack B:\n");
-			print_stack(stack_b);
-		
 			free(next_line);
 			next_line = get_next_line(0);
 		}
-
-
-		
-        if (is_sorted(&stack_a) && ft_lstsize(stack_a) == size)
+		if (is_sorted(&stack_a) && ft_lstsize(stack_a) == size)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);

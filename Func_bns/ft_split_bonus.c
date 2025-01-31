@@ -6,36 +6,11 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:44:43 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/30 09:47:09 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 15:06:39 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-// char	*ft_substr(char *s, unsigned int start, size_t len)
-// {
-// 	char	*str;
-// 	size_t	i;
-
-// 	i = 0;
-// 	if (!s)
-// 		return (NULL);
-// 	if (start >= ft_strlen(s))
-// 		len = 0;
-// 	if (len > ft_strlen(s) - start)
-// 		len = ft_strlen(s) - start;
-// 	str = (char *)malloc(len + 1);
-// 	if (!str)
-// 		return (NULL);
-// 	while (i < len)
-// 	{
-// 		str[i] = s[start];
-// 		i++;
-// 		start++;
-// 	}
-// 	str[i] = '\0';
-// 	return (str);
-// }
 
 static	size_t	ft_count(char *s, char c)
 {

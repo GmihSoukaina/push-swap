@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 10:57:55 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/29 18:25:52 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 15:12:37 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,20 @@ char	*get_next_line(int fd)
 		return (free(str[fd]), str[fd] = NULL, NULL);
 	str[fd] = update_str(str[fd]);
 	return (line);
+}
+
+void	free_leaks(t_list **stack)
+{
+	t_list	*temp;
+
+	if (!stack || !(*stack))
+		return ;
+	temp = *stack;
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+	*stack = NULL;
 }

@@ -6,23 +6,11 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 11:01:02 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/29 18:26:01 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 15:11:49 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-// size_t	ft_strlen(const char *s)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -98,4 +86,17 @@ char	*ft_strchr(const char *s, int c)
 	if (*s == (char) c)
 		return ((char *) s);
 	return (NULL);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	len;
+
+	len = 0;
+	while (*str)
+	{
+		str++;
+		len++;
+	}
+	return (len);
 }
