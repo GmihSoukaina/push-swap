@@ -7,7 +7,7 @@ NAME = push_swap
 BONUS_NAME = checker
 
 Funs =  Func/helper_function.c Func/operation_push.c Func/helpr_function.c Func/algo_sort.c Func/func_utils_linkd_list.c Func/parsing.c Func/ft_split.c Func/operation_rotate.c Func/operation_reverse_rotate.c Func/operation_swap.c Func/push_swap.c
-Funs_bn =  Func_bns/algo_sort_bonus.c Func_bns/checker.c Func_bns/ft_split_bonus.c Func_bns/func_utils_linkd_list_bonus.c Func_bns/get_next_line_bonus.c Func_bns/get_next_line_utils_bonus.c Func_bns/helper_function_bonus.c Func_bns/helpr_function_bonus.c Func_bns/operation_push_bonus.c Func_bns/operation_reverse_rotate_bonus.c Func_bns/operation_rotate_bonus.c Func_bns/operation_swap_bonus.c Func_bns/parsing_bonus.c
+Funs_bn =  Func_bns/checker.c Func_bns/ft_split_bonus.c Func_bns/func_utils_linkd_list_bonus.c Func_bns/get_next_line_bonus.c Func_bns/get_next_line_utils_bonus.c Func_bns/helpr_function_bonus.c Func_bns/operation_push_bonus.c Func_bns/operation_reverse_rotate_bonus.c Func_bns/operation_rotate_bonus.c Func_bns/operation_swap_bonus.c Func_bns/parsing_bonus.c
 
 OFuns = $(Funs:.c=.o)
 OFuns_bn = $(Funs_bn:.c=.o)
@@ -21,7 +21,6 @@ $(NAME): $(OFuns)
 	@$(C_Compiler) $(CFLAGS) -o $(NAME) $(OFuns)
 
 $(BONUS_NAME): $(OFuns_bn)
-# @rm -rf $(NAME)
 	@$(C_Compiler) $(CFLAGS) -o $(BONUS_NAME) $(OFuns_bn)
 
 Func/%.o: Func/%.c $(HEADER)
@@ -39,32 +38,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean
-
-
-
-# CC = cc
-# CFLAGS = -Wall -Wextra -Werror
-# HEADERS = Func/push_swap.h
-
-# NAME = push_swap
-# Funs =  Func/helper_function.c Func/operation_push.c Func/helpr_function.c Func/algo_sort.c Func/func_utils_linkd_list.c Func/parsing.c Func/ft_split.c Func/operation_rotate.c Func/operation_reverse_rotate.c Func/operation_swap.c  Func/push_swap.c
-
-# OFuns = $(Funs:.c=.o)
-
-# all: $(NAME)
-
-# $(NAME): $(OFuns)
-# 	@$(CC) $(CFLAGS) -o $(NAME) $(OFuns)
-
-# %.o: %.c $(HEADERS)
-# 	@$(CC) $(CFLAGS) -c $< -o $@
-
-# clean:
-# 	@$(RM) $(OFuns)
-
-# fclean: clean
-# 	@$(RM) $(NAME)
-
-# re: fclean all
-
-# .PHONY: clean

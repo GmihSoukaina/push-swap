@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:58:37 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/31 15:21:19 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 19:28:29 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	fun_index(t_list **str, t_list *node);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_error(t_list **stack);
-void	push(t_list **src, t_list **dst, char *str);
-void	reverse_rotate(t_list **stack, char *str);
+void	push(t_list **src, t_list **dst);
+void	reverse_rotate(t_list **stack);
 void	swap(t_list **stack);
 void	rotate(t_list **stack);
 void	ft_lstclear(t_list **lst);
@@ -67,4 +67,5 @@ void	reverse_rotate_b(t_list **stack_b);
 void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 void	push_a(t_list **stack_a, t_list **stack_b);
 void	push_b(t_list **stack_a, t_list **stack_b);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif

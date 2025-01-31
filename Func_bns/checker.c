@@ -6,11 +6,25 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:58:34 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/31 15:05:06 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 18:47:04 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+int	is_sorted(t_list **stack)
+{
+	t_list	*head;
+
+	head = *stack;
+	while (head && head->next)
+	{
+		if (head->content > head->next->content)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
 
 void	parse(char **av, t_list **stack_a)
 {

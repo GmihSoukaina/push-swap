@@ -6,11 +6,12 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:26:30 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/31 14:38:42 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/01/31 17:05:29 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <libc.h> //remove me 
 
 void	parse(char **av, t_list **stack_a)
 {
