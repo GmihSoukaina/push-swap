@@ -6,7 +6,7 @@
 /*   By: sgmih <sgmih@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:12:33 by sgmih             #+#    #+#             */
-/*   Updated: 2025/01/31 14:39:48 by sgmih            ###   ########.fr       */
+/*   Updated: 2025/02/01 14:12:49 by sgmih            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <libc.h> //remoove me 
 
 typedef struct s_list
 {
